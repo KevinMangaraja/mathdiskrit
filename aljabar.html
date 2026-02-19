@@ -397,80 +397,48 @@ document.write(`
                 
 <div id="searchbox"></div>
                 <article class="bd-article">
-                  
-  <section id="aljabar-boolean">
-<h1>Aljabar boolean<a class="headerlink" href="#aljabar-boolean" title="Link to this heading">#</a></h1>
-<p>Aljabar Boolean adalah sistem matematika yang digunakan untuk operasi logika dengan dua nilai kebenaran, yaitu benar (1) dan salah (0). Aljabar Boolean sangat penting dalam desain sirkuit digital dan komputer karena mendasari logika biner yang digunakan dalam komputasi. Beberapa operasi dasar dalam aljabar Boolean adalah:</p>
-<p>Operasi Dasar Aljabar Boolean:</p>
-<ol class="arabic simple">
-<li><p>NOT (¬): Operasi negasi yang membalik nilai kebenaran.</p></li>
-<li><p>AND (∧): Operasi logika yang hanya benar jika kedua operandnya benar.</p></li>
-</ol>
-<p>Tabel kebenaran AND:</p>
-<p>\begin{array}{c|c|c}
-A &amp; B &amp; A \land B \
-\hline
-0 &amp; 0 &amp; 0 \
-0 &amp; 1 &amp; 0 \
-1 &amp; 0 &amp; 0 \
-1 &amp; 1 &amp; 1 \
-\end{array}</p>
-<ol class="arabic simple" start="3">
-<li><p>OR (∨): Operasi logika yang benar jika salah satu atau kedua operandnya benar.
-Tabel kebenaran OR:</p></li>
-</ol>
-<p>\begin{array}{c|c|c}
-A &amp; B &amp; A \lor B \
-\hline
-0 &amp; 0 &amp; 0 \
-0 &amp; 1 &amp; 1 \
-1 &amp; 0 &amp; 1 \
-1 &amp; 1 &amp; 1 \
-\end{array}</p>
-<ol class="arabic simple" start="4">
-<li><p>XOR (⊕): Operasi OR eksklusif yang hanya benar jika salah satu operand benar, tetapi tidak keduanya.
-Tabel kebenaran XOR:</p></li>
-</ol>
-<p>\begin{array}{c|c|c}
-A &amp; B &amp; A \oplus B \
-\hline
-0 &amp; 0 &amp; 0 \
-0 &amp; 1 &amp; 1 \
-1 &amp; 0 &amp; 1 \
-1 &amp; 1 &amp; 0 \
-\end{array}</p>
+<section class="data-mining">
+    <h2>Pengertian Penambangan Data (Data Mining)</h2>
+    <p>
+        Penambangan data (data mining) adalah proses analitik berbantuan komputer 
+        untuk mengeksplorasi dan memproses sekumpulan data besar guna menemukan 
+        pola tersembunyi, korelasi, tren, dan hubungan yang bermakna. 
+        Teknik ini mengubah data mentah menjadi pengetahuan praktis, 
+        memungkinkan organisasi membuat prediksi yang akurat, meningkatkan 
+        pengambilan keputusan strategis, serta mengoptimalkan kinerja.
+    </p>
+
+    <h3>Poin-Poin Penting Mengenai Penambangan Data</h3>
+
+    <h4>1. Langkah-langkah Utama Penambangan Data</h4>
+    <ul>
+        <li><strong>Penetapan Tujuan:</strong> Menentukan masalah bisnis secara tepat.</li>
+        <li><strong>Seleksi Data:</strong> Mengidentifikasi kumpulan data yang diperlukan.</li>
+        <li><strong>Penyiapan Data (Pembersihan):</strong> Menghilangkan duplikasi, nilai yang hilang, dan outlier (data yang menyimpang).</li>
+        <li><strong>Pembuatan Model & Penambangan:</strong> Menggunakan algoritma untuk mencari pola seperti klasifikasi, klastering, dan aturan asosiasi.</li>
+        <li><strong>Evaluasi Hasil:</strong> Menginterpretasikan dan memvisualisasikan hasil untuk diterapkan.</li>
+    </ul>
+
+    <h4>2. Jenis-Jenis Penambangan Data</h4>
+    <ul>
+        <li><strong>Deskriptif:</strong> Memberikan informasi tentang pola tertentu, misalnya pola pembelian pelanggan.</li>
+        <li><strong>Prediktif:</strong> Mengekstrak data untuk memprediksi hasil di masa depan, misalnya prediksi tren pasar saham.</li>
+    </ul>
+
+    <h4>3. Contoh Penerapan Penambangan Data</h4>
+    <ul>
+        <li><strong>Pemasaran:</strong> Segmentasi pelanggan, analisis keranjang belanja, dan prediksi perilaku pelanggan (churn prediction).</li>
+        <li><strong>Perbankan:</strong> Deteksi penipuan (fraud detection), analisis risiko, dan penilaian kredit.</li>
+        <li><strong>Kesehatan:</strong> Prediksi penyakit, analisis rekam medis, dan efisiensi perawatan.</li>
+        <li><strong>Pendidikan:</strong> Prediksi kinerja siswa.</li>
+    </ul>
+
+    <p>
+        Penambangan data menggabungkan metode dari statistik, kecerdasan buatan (AI), 
+        dan sistem basis data untuk mengubah data mentah menjadi wawasan bisnis yang berharga.
+    </p>
 </section>
-<section id="gerbang-logika">
-<h1>Gerbang Logika<a class="headerlink" href="#gerbang-logika" title="Link to this heading">#</a></h1>
-<p>Gerbang logika adalah implementasi fisik dari operasi aljabar Boolean dalam sirkuit digital. Setiap gerbang logika menerima input biner (0 atau 1) dan menghasilkan output berdasarkan aturan logika tertentu.</p>
-<ol class="arabic">
-<li><p>Gerbang NOT (Inverter):</p>
-<p>Fungsi: Membalik nilai input.</p>
-<p>Simbol: Segitiga dengan lingkaran kecil di      ujungnya.</p>
-<p>Jika input = 1, maka output = 0, dan            sebaliknya.</p>
-</li>
-<li><p>Gerbang AND:</p>
-<p>Fungsi: Menghasilkan output 1 jika semua       inputnya 1.</p>
-<p>Simbol: Bentuk setengah lingkaran dengan       dua input dan satu output.</p>
-<p>Tabel kebenaran sama seperti operasi AND.</p>
-</li>
-<li><p>Gerbang OR:</p>
-<p>Fungsi: Menghasilkan output 1 jika salah       satu atau lebih inputnya 1.</p>
-<p>Simbol: Bentuk seperti panah dengan dua         input dan satu output.</p>
-<p>Tabel kebenaran sama seperti operasi OR.</p>
-</li>
-<li><p>Gerbang XOR:</p></li>
-</ol>
-<p>Fungsi: Menghasilkan output 1 jika salah satu inputnya benar, tetapi tidak keduanya.</p>
-<p>Simbol: Seperti gerbang OR tetapi dengan garis tambahan di depan.</p>
-<p>Tabel kebenaran sama seperti operasi XOR.</p>
-<p>Penggunaan Aljabar Boolean dan Gerbang Logika</p>
-<p>Sirkuit digital seperti komputer, kalkulator, dan perangkat elektronik lainnya menggunakan kombinasi gerbang logika untuk memproses informasi biner (0 dan 1).</p>
-<p>Desain rangkaian digital menggunakan gerbang logika untuk membuat perangkat yang mampu melakukan operasi aritmatika, pengambilan keputusan, kontrol logis, dan lainnya.</p>
-<p>Contoh Sederhana:</p>
-<p>Jika kita memiliki dua input  dan , dengan aljabar Boolean kita bisa menulis ekspresi:</p>
-<p>, yang menunjukkan bagaimana aljabar Boolean digunakan untuk menyederhanakan logika. Gerbang logika kemudian dapat digunakan untuk mengimplementasikan ekspresi ini dalam bentuk rangkaian.</p>
-</section>
+
 
     <script type="text/x-thebe-config">
     {
