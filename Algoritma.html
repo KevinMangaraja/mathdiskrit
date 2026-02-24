@@ -1,13 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>2D Scatter Plot Iris</title>
+    <title>Scatter Plot Iris</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        .chart-box {
+            width: 400px;     /* Lebar kotak */
+            height: 300px;    /* Tinggi kotak */
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        canvas {
+            width: 100% !important;
+            height: 100% !important;
+        }
+    </style>
 </head>
 <body>
 
-    <h2>2D Scatter Plot: Sepal Length vs Sepal Width (Iris Dataset)</h2>
-    <canvas id="irisChart" width="600" height="400"></canvas>
+    <div class="chart-box">
+        <canvas id="irisChart"></canvas>
+    </div>
 
     <script>
         const ctx = document.getElementById('irisChart').getContext('2d');
@@ -34,10 +59,13 @@
                 datasets: [{
                     label: 'Sepal Length vs Sepal Width',
                     data: irisData,
-                    backgroundColor: 'blue'
+                    backgroundColor: 'blue',
+                    pointRadius: 4
                 }]
             },
             options: {
+                responsive: true,
+                maintainAspectRatio: false,
                 scales: {
                     x: {
                         title: {
@@ -55,6 +83,166 @@
             }
         });
     </script>
+    <div class="container">
+
+    <h2>1️⃣ Diagram Dua Dimensi (Data Titik)</h2>
+
+    <p>
+        Diagram yang ditampilkan adalah <strong>scatter plot (diagram titik 2D)</strong> dengan:
+    </p>
+
+    <ul>
+        <li><strong>Sumbu X :</strong> Sepal Length</li>
+        <li><strong>Sumbu Y :</strong> Sepal Width</li>
+    </ul>
+
+    <p>
+        Setiap titik merepresentasikan satu sampel bunga Iris.
+    </p>
+
+    <p>Dari grafik dapat diamati:</p>
+
+    <ul>
+        <li>Sebaran data cukup menyebar antara panjang sepal 4.3 – 7.9</li>
+        <li>Lebar sepal berkisar antara 2.0 – 4.4</li>
+        <li>Ada kecenderungan variasi, tetapi tidak membentuk garis lurus sempurna (hubungan tidak sepenuhnya linear kuat)</li>
+    </ul>
+
+    <hr>
+
+    <h2>2️⃣ Perhitungan Statistik Deskriptif</h2>
+
+    <p>Perhitungan dilakukan untuk seluruh kolom numerik:</p>
+
+    <ul>
+        <li>Sepal Length</li>
+        <li>Sepal Width</li>
+        <li>Petal Length</li>
+        <li>Petal Width</li>
+    </ul>
+
+    <h3>📌 A. Mean (Rata-rata)</h3>
+
+    <p><strong>Rumus Mean:</strong></p>
+
+    <p style="font-size:18px;">
+        x̄ = ∑x / n
+    </p>
+
+    <p>
+        Artinya: jumlah seluruh data dibagi jumlah sampel (150 data).
+    </p>
+
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Variabel</th>
+            <th>Mean</th>
+        </tr>
+        <tr>
+            <td>Sepal Length</td>
+            <td>5.8433</td>
+        </tr>
+        <tr>
+            <td>Sepal Width</td>
+            <td>3.0540</td>
+        </tr>
+        <tr>
+            <td>Petal Length</td>
+            <td>3.7587</td>
+        </tr>
+        <tr>
+            <td>Petal Width</td>
+            <td>1.1987</td>
+        </tr>
+    </table>
+
+    <p><strong>Interpretasi:</strong></p>
+    <ul>
+        <li>Rata-rata panjang sepal bunga Iris adalah 5.84 cm</li>
+        <li>Rata-rata lebar sepal adalah 3.05 cm</li>
+        <li>Rata-rata panjang petal adalah 3.76 cm</li>
+        <li>Rata-rata lebar petal adalah 1.20 cm</li>
+    </ul>
+
+    <h3>📌 B. Median (Nilai Tengah)</h3>
+
+    <p><strong>Rumus Median:</strong></p>
+    <ul>
+        <li>Jika n ganjil → data ke-(n+1)/2</li>
+        <li>Jika n genap → rata-rata data ke-n/2 dan (n/2+1)</li>
+    </ul>
+
+    <p>
+        Karena jumlah data 150 (genap), median diambil dari rata-rata dua nilai tengah setelah data diurutkan.
+    </p>
+
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Variabel</th>
+            <th>Median</th>
+        </tr>
+        <tr>
+            <td>Sepal Length</td>
+            <td>5.80</td>
+        </tr>
+        <tr>
+            <td>Sepal Width</td>
+            <td>3.00</td>
+        </tr>
+        <tr>
+            <td>Petal Length</td>
+            <td>4.35</td>
+        </tr>
+        <tr>
+            <td>Petal Width</td>
+            <td>1.30</td>
+        </tr>
+    </table>
+
+    <p><strong>Interpretasi:</strong></p>
+    <ul>
+        <li>50% data memiliki panjang sepal ≤ 5.8</li>
+        <li>50% data memiliki lebar petal ≤ 1.3</li>
+        <li>Median lebih stabil terhadap outlier dibanding mean.</li>
+    </ul>
+
+    <h3>📌 C. Modus (Nilai yang Paling Sering Muncul)</h3>
+
+    <p>Modus adalah nilai dengan frekuensi kemunculan tertinggi.</p>
+
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Variabel</th>
+            <th>Modus</th>
+        </tr>
+        <tr>
+            <td>Sepal Length</td>
+            <td>5.0</td>
+        </tr>
+        <tr>
+            <td>Sepal Width</td>
+            <td>3.0</td>
+        </tr>
+        <tr>
+            <td>Petal Length</td>
+            <td>1.5</td>
+        </tr>
+        <tr>
+            <td>Petal Width</td>
+            <td>0.2</td>
+        </tr>
+    </table>
+
+    <p><strong>Interpretasi:</strong></p>
+    <ul>
+        <li>Panjang sepal yang paling sering muncul adalah 5.0</li>
+        <li>Lebar sepal yang paling sering muncul adalah 3.0</li>
+        <li>Panjang petal yang paling sering muncul adalah 1.5</li>
+        <li>Lebar petal yang paling sering muncul adalah 0.2</li>
+        <li>Modus menunjukkan nilai dominan dalam dataset.</li>
+    </ul>
+
+</div>
 
 </body>
 </html>
