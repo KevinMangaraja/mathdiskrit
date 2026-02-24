@@ -161,7 +161,7 @@
     </div>
 </div>
 <div class="section">
-    <h2>6. Rank (Pemeringkatan Atribut)</h2>
+    <h2>Rank (Pemeringkatan Atribut)</h2>
 
     <p>
         Pada bagian <strong>Rank</strong>, dilakukan proses pemeringkatan atribut untuk melihat 
@@ -237,6 +237,198 @@
 </div>
 <div class="image-box">
     <img src="orange8.png" alt="Scatter Plot Iris">
+</div>
+<div class="section">
+    <h2>Eksplorasi Dataset Iris Menggunakan Orange</h2>
+
+    <p>
+        Pada tahap eksplorasi menggunakan aplikasi <strong>Orange</strong>, dataset Iris digunakan sebagai objek analisis.
+        Berdasarkan tampilan pada <strong>Data Table</strong>, dataset ini terdiri dari <strong>150 baris data</strong> 
+        dan <strong>5 atribut</strong>. Seluruh data terisi lengkap tanpa adanya missing value sehingga data siap 
+        digunakan untuk proses analisis lebih lanjut.
+    </p>
+
+    <p>
+        Dataset Iris memiliki empat atribut numerik, yaitu:
+    </p>
+
+    <ul>
+        <li>sepal_length (panjang kelopak)</li>
+        <li>sepal_width (lebar kelopak)</li>
+        <li>petal_length (panjang mahkota)</li>
+        <li>petal_width (lebar mahkota)</li>
+    </ul>
+
+    <p>
+        Selain itu terdapat satu atribut kategorikal yaitu <strong>species</strong> yang menunjukkan jenis bunga iris:
+        <strong>Iris-setosa</strong>, <strong>Iris-versicolor</strong>, dan <strong>Iris-virginica</strong>.
+    </p>
+
+    <p>
+        Setiap baris data merepresentasikan satu sampel bunga beserta ukuran bagian-bagiannya dan label spesiesnya.
+        Dataset ini sering digunakan dalam pembelajaran machine learning, khususnya untuk kasus klasifikasi,
+        karena strukturnya rapi, mudah dipahami, dan tidak mengandung data kosong.
+    </p>
+</div>
+
+
+<div class="section">
+    <h2>Visualisasi Scatter Plot</h2>
+
+    <p>
+        Pada tahap visualisasi data menggunakan fitur <strong>Scatter Plot</strong> di Orange,
+        dilakukan perbandingan antara dua variabel, yaitu <strong>petal_length</strong> (sumbu X)
+        dan <strong>petal_width</strong> (sumbu Y).
+    </p>
+
+    <p>
+        Setiap titik pada grafik merepresentasikan satu sampel bunga iris.
+        Perbedaan warna digunakan untuk membedakan kategori spesies.
+    </p>
+
+    <p>
+        Berdasarkan visualisasi, kelompok <strong>Iris-setosa</strong> terpisah sangat jelas dari dua spesies lainnya.
+        Hal ini menunjukkan bahwa ukuran mahkota bunga pada Iris-setosa berbeda cukup signifikan.
+    </p>
+
+    <p>
+        Sementara itu, <strong>Iris-versicolor</strong> dan <strong>Iris-virginica</strong>
+        masih memiliki beberapa titik yang berdekatan, namun pemisahannya lebih jelas dibandingkan
+        jika menggunakan variabel sepal.
+    </p>
+
+    <p>
+        Visualisasi ini menunjukkan bahwa variabel pada bagian <strong>petal</strong>
+        lebih efektif dalam membantu membedakan spesies bunga iris.
+    </p>
+</div>
+
+
+<div class="section">
+    <h2>Analisis Correlations</h2>
+
+    <p>
+        Pada tahap analisis menggunakan fitur <strong>Correlations</strong> di Orange,
+        dihitung hubungan antar variabel numerik menggunakan metode <strong>Pearson correlation</strong>.
+    </p>
+
+    <p>
+        Nilai korelasi berada pada rentang -1 sampai +1:
+    </p>
+
+    <ul>
+        <li>Nilai mendekati +1 menunjukkan hubungan positif yang kuat.</li>
+        <li>Nilai mendekati -1 menunjukkan hubungan negatif.</li>
+        <li>Nilai mendekati 0 menunjukkan hubungan yang lemah.</li>
+    </ul>
+
+    <p>
+        Berdasarkan hasil analisis:
+    </p>
+
+    <ul>
+        <li>petal_length dan petal_width memiliki korelasi sangat tinggi (~ +0.963)</li>
+        <li>petal_length dan sepal_length memiliki korelasi kuat (~ +0.872)</li>
+        <li>petal_width dan sepal_length memiliki korelasi cukup kuat (~ +0.818)</li>
+        <li>sepal_length dan sepal_width memiliki korelasi sangat lemah (~ -0.109)</li>
+    </ul>
+
+    <p>
+        Dapat disimpulkan bahwa variabel pada bagian <strong>petal</strong> memiliki keterkaitan
+        yang lebih kuat dibandingkan variabel sepal, sehingga lebih informatif dalam membedakan spesies iris.
+    </p>
+</div>
+
+
+<div class="section">
+    <h2>Box Plot</h2>
+
+    <p>
+        Pada tampilan <strong>Box Plot</strong>, ditunjukkan penyebaran data untuk variabel
+        <strong>petal_length</strong>.
+    </p>
+
+    <p>
+        Grafik menampilkan nilai minimum, maksimum, median, dan rata-rata.
+        Nilai rata-rata panjang petal berada di sekitar <strong>3.76</strong>,
+        dengan sebaran data yang cukup lebar.
+    </p>
+
+    <p>
+        Box Plot membantu memahami distribusi data, tingkat variasi,
+        serta mendeteksi kemungkinan outlier.
+        Berdasarkan grafik, panjang mahkota memiliki variasi cukup besar
+        namun masih dalam rentang yang wajar.
+    </p>
+</div>
+
+
+<div class="section">
+    <h2>Column Statistics</h2>
+
+    <p>
+        Pada bagian <strong>Column Statistics</strong>, ditampilkan ringkasan statistik
+        dari masing-masing variabel, meliputi:
+    </p>
+
+    <ul>
+        <li>Mean (rata-rata)</li>
+        <li>Median</li>
+        <li>Mode</li>
+        <li>Minimum dan maksimum</li>
+        <li>Dispersion (tingkat penyebaran)</li>
+        <li>Missing value</li>
+    </ul>
+
+    <p>
+        Seluruh data berada dalam kondisi lengkap tanpa missing value (0%).
+        Variabel pada bagian petal menunjukkan variasi yang lebih besar
+        dibandingkan variabel sepal.
+    </p>
+
+    <p>
+        Informasi ini membantu memberikan gambaran awal kondisi dataset
+        sebelum dilakukan analisis lanjutan.
+    </p>
+</div>
+
+
+<div class="section">
+    <h2>Pivot Table</h2>
+
+    <p>
+        Pada bagian <strong>Pivot Table</strong>, ditampilkan distribusi jumlah data
+        untuk setiap spesies bunga iris.
+    </p>
+
+    <table>
+        <tr>
+            <th>Species</th>
+            <th>Jumlah Data</th>
+        </tr>
+        <tr>
+            <td>Iris-setosa</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Iris-versicolor</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Iris-virginica</td>
+            <td>50</td>
+        </tr>
+    </table>
+
+    <p>
+        Total keseluruhan berjumlah <strong>150 data</strong>.
+        Kondisi ini menunjukkan bahwa dataset Iris memiliki distribusi kelas yang seimbang.
+    </p>
+
+    <p>
+        Distribusi kelas yang seimbang sangat menguntungkan dalam proses klasifikasi
+        karena tidak ada satu kelas yang mendominasi model.
+    </p>
 </div>
 
 
