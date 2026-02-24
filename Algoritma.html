@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Laporan Dataset Iris</title>
+    <title>Laporan Eksplorasi Dataset Iris</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
@@ -10,52 +10,43 @@
             margin: 0;
             padding: 20px;
         }
-
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: auto;
             background: white;
             padding: 25px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
-
-        h2 {
+        h1, h2 {
             border-bottom: 2px solid #ddd;
             padding-bottom: 5px;
         }
-
-        .chart-box {
-            width: 400px;
-            height: 300px;
-            margin: 20px auto;
-        }
-
-        canvas {
-            width: 100% !important;
-            height: 100% !important;
-        }
-
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 10px;
         }
-
         table, th, td {
             border: 1px solid #ccc;
         }
-
-        th, td {
-            padding: 8px;
-            text-align: center;
-        }
-
         th {
             background: #007bff;
             color: white;
         }
-
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+        .chart-box {
+            width: 500px;
+            height: 400px;
+            margin: 20px auto;
+        }
+        canvas {
+            width: 100% !important;
+            height: 100% !important;
+        }
         ul {
             margin-top: 5px;
         }
@@ -65,124 +56,116 @@
 
 <div class="container">
 
-    <h1>Analisis Dataset Iris</h1>
+<h1>Data Understanding - Dataset Iris</h1>
 
-    <!-- BAGIAN GRAFIK -->
-    <h2>1️⃣ Diagram Dua Dimensi (Data Titik)</h2>
+<h2>1. Informasi Dataset</h2>
+<ul>
+<li>Jumlah Data: 150</li>
+<li>Jumlah Variabel: 5</li>
+<li>Missing Value: Tidak ada</li>
+<li>Distribusi Kelas: Seimbang (50 tiap spesies)</li>
+</ul>
 
-    <div class="chart-box">
-        <canvas id="irisChart"></canvas>
-    </div>
+<h2>2. Scatter Plot (Petal Length vs Petal Width)</h2>
 
-    <p>Diagram yang ditampilkan adalah <strong>scatter plot (diagram titik 2D)</strong> dengan:</p>
+<div class="chart-box">
+<canvas id="scatterChart"></canvas>
+</div>
 
-    <ul>
-        <li><strong>Sumbu X :</strong> Sepal Length</li>
-        <li><strong>Sumbu Y :</strong> Sepal Width</li>
-    </ul>
+<p>Terlihat bahwa Iris-setosa terpisah sangat jelas dari dua spesies lainnya. 
+Variabel petal lebih efektif dalam membedakan spesies.</p>
 
-    <p>Setiap titik merepresentasikan satu sampel bunga Iris.</p>
+<h2>3. Matriks Korelasi</h2>
 
-    <ul>
-        <li>Sebaran data cukup menyebar antara panjang sepal 4.3 – 7.9</li>
-        <li>Lebar sepal berkisar antara 2.0 – 4.4</li>
-        <li>Ada kecenderungan variasi, tetapi tidak membentuk garis lurus sempurna</li>
-    </ul>
+<table>
+<tr>
+<th></th>
+<th>Sepal Length</th>
+<th>Sepal Width</th>
+<th>Petal Length</th>
+<th>Petal Width</th>
+</tr>
+<tr><td>Sepal Length</td><td>1.00</td><td>-0.109</td><td>0.872</td><td>0.818</td></tr>
+<tr><td>Sepal Width</td><td>-0.109</td><td>1.00</td><td>-0.421</td><td>-0.357</td></tr>
+<tr><td>Petal Length</td><td>0.872</td><td>-0.421</td><td>1.00</td><td>0.963</td></tr>
+<tr><td>Petal Width</td><td>0.818</td><td>-0.357</td><td>0.963</td><td>1.00</td></tr>
+</table>
 
-    <!-- STATISTIK -->
-    <h2>2️⃣ Perhitungan Statistik Deskriptif</h2>
+<h2>4. Statistik Deskriptif</h2>
 
-    <p>Perhitungan dilakukan untuk seluruh kolom numerik:</p>
+<table>
+<tr>
+<th>Variabel</th>
+<th>Mean</th>
+<th>Median</th>
+<th>Modus</th>
+<th>Std Dev</th>
+<th>Min</th>
+<th>Max</th>
+</tr>
+<tr><td>Sepal Length</td><td>5.843</td><td>5.8</td><td>5.0</td><td>0.828</td><td>4.3</td><td>7.9</td></tr>
+<tr><td>Sepal Width</td><td>3.054</td><td>3.0</td><td>3.0</td><td>0.434</td><td>2.0</td><td>4.4</td></tr>
+<tr><td>Petal Length</td><td>3.759</td><td>4.35</td><td>1.5</td><td>1.764</td><td>1.0</td><td>6.9</td></tr>
+<tr><td>Petal Width</td><td>1.199</td><td>1.3</td><td>0.2</td><td>0.763</td><td>0.1</td><td>2.5</td></tr>
+</table>
 
-    <ul>
-        <li>Sepal Length</li>
-        <li>Sepal Width</li>
-        <li>Petal Length</li>
-        <li>Petal Width</li>
-    </ul>
+<h2>5. Ranking Variabel (Orange)</h2>
+<ol>
+<li><strong>Petal Length</strong> (Paling berpengaruh)</li>
+<li><strong>Petal Width</strong></li>
+<li><strong>Sepal Length</strong></li>
+<li><strong>Sepal Width</strong> (Paling rendah)</li>
+</ol>
 
-    <!-- MEAN -->
-    <h3>📌 A. Mean (Rata-rata)</h3>
-    <p><strong>Rumus:</strong> x̄ = ∑x / n</p>
-    <p>Jumlah seluruh data dibagi jumlah sampel (150 data).</p>
-
-    <table>
-        <tr>
-            <th>Variabel</th>
-            <th>Mean</th>
-        </tr>
-        <tr><td>Sepal Length</td><td>5.8433</td></tr>
-        <tr><td>Sepal Width</td><td>3.0540</td></tr>
-        <tr><td>Petal Length</td><td>3.7587</td></tr>
-        <tr><td>Petal Width</td><td>1.1987</td></tr>
-    </table>
-
-    <!-- MEDIAN -->
-    <h3>📌 B. Median (Nilai Tengah)</h3>
-    <ul>
-        <li>Jika n ganjil → data ke-(n+1)/2</li>
-        <li>Jika n genap → rata-rata data ke-n/2 dan (n/2+1)</li>
-    </ul>
-
-    <table>
-        <tr>
-            <th>Variabel</th>
-            <th>Median</th>
-        </tr>
-        <tr><td>Sepal Length</td><td>5.80</td></tr>
-        <tr><td>Sepal Width</td><td>3.00</td></tr>
-        <tr><td>Petal Length</td><td>4.35</td></tr>
-        <tr><td>Petal Width</td><td>1.30</td></tr>
-    </table>
-
-    <!-- MODUS -->
-    <h3>📌 C. Modus (Nilai yang Paling Sering Muncul)</h3>
-
-    <table>
-        <tr>
-            <th>Variabel</th>
-            <th>Modus</th>
-        </tr>
-        <tr><td>Sepal Length</td><td>5.0</td></tr>
-        <tr><td>Sepal Width</td><td>3.0</td></tr>
-        <tr><td>Petal Length</td><td>1.5</td></tr>
-        <tr><td>Petal Width</td><td>0.2</td></tr>
-    </table>
+<h2>6. Pivot Table (Distribusi Kelas)</h2>
+<table>
+<tr><th>Spesies</th><th>Jumlah Data</th></tr>
+<tr><td>Iris-setosa</td><td>50</td></tr>
+<tr><td>Iris-versicolor</td><td>50</td></tr>
+<tr><td>Iris-virginica</td><td>50</td></tr>
+</table>
 
 </div>
 
 <script>
-const ctx = document.getElementById('irisChart').getContext('2d');
-
-const irisData = [
-    {x:5.1, y:3.5}, {x:4.9, y:3.0}, {x:4.7, y:3.2},
-    {x:4.6, y:3.1}, {x:5.0, y:3.6}, {x:5.4, y:3.9},
-    {x:4.6, y:3.4}, {x:5.0, y:3.4}, {x:4.4, y:2.9},
-    {x:4.9, y:3.1}, {x:5.4, y:3.7}, {x:4.8, y:3.4},
-    {x:4.8, y:3.0}, {x:4.3, y:3.0}, {x:5.8, y:4.0},
-    {x:5.7, y:4.4}, {x:6.4, y:3.2}, {x:7.9, y:3.8}
-];
+const ctx = document.getElementById('scatterChart').getContext('2d');
 
 new Chart(ctx, {
     type: 'scatter',
     data: {
-        datasets: [{
-            label: 'Sepal Length vs Sepal Width',
-            data: irisData,
-            backgroundColor: 'blue',
-            pointRadius: 4
-        }]
+        datasets: [
+            {
+                label: 'Iris-setosa',
+                data: [
+                    {x:1.4,y:0.2},{x:1.5,y:0.2},{x:1.3,y:0.2},
+                    {x:1.5,y:0.2},{x:1.4,y:0.3}
+                ],
+                backgroundColor: 'red'
+            },
+            {
+                label: 'Iris-versicolor',
+                data: [
+                    {x:4.7,y:1.4},{x:4.5,y:1.5},{x:4.9,y:1.5},
+                    {x:4.0,y:1.3},{x:4.6,y:1.5}
+                ],
+                backgroundColor: 'green'
+            },
+            {
+                label: 'Iris-virginica',
+                data: [
+                    {x:6.0,y:2.5},{x:5.1,y:1.9},{x:5.9,y:2.1},
+                    {x:5.6,y:1.8},{x:6.6,y:2.1}
+                ],
+                backgroundColor: 'blue'
+            }
+        ]
     },
     options: {
         responsive: true,
         maintainAspectRatio: false,
         scales: {
-            x: {
-                title: { display: true, text: 'Sepal Length' }
-            },
-            y: {
-                title: { display: true, text: 'Sepal Width' }
-            }
+            x: { title: { display: true, text: 'Petal Length' }},
+            y: { title: { display: true, text: 'Petal Width' }}
         }
     }
 });
