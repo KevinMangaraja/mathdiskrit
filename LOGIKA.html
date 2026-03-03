@@ -422,6 +422,85 @@ document.write(`
               
 
 <div class="container">
+<!-- ================= DATA CAMPURAN DARI DATASET IRIS ================= -->
+
+<section>
+    <h2>Data Campuran dari Dataset Iris</h2>
+    
+    <p>
+        Dataset Iris asli memiliki 4 atribut numerik dan 1 atribut kategorikal.
+        Untuk membentuk data campuran (numerik, ordinal, kategorikal, dan biner),
+        dilakukan proses transformasi pada beberapa atribut tanpa mengambil data luar.
+    </p>
+
+    <h3>Struktur Data Campuran</h3>
+
+    <table border="1" cellpadding="8" cellspacing="0" width="100%">
+        <thead style="background-color:#f2f2f2;">
+            <tr>
+                <th>No</th>
+                <th>Sepal Length<br>(Numerik)</th>
+                <th>Sepal Width<br>(Numerik)</th>
+                <th>Petal Length<br>(Ordinal)</th>
+                <th>Species<br>(Kategorikal)</th>
+                <th>Petal Width<br>(Biner)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>5.1</td><td>3.5</td><td>Pendek (1)</td><td>setosa</td><td>0</td></tr>
+            <tr><td>2</td><td>4.9</td><td>3.0</td><td>Pendek (1)</td><td>setosa</td><td>0</td></tr>
+            <tr><td>3</td><td>4.7</td><td>3.2</td><td>Pendek (1)</td><td>setosa</td><td>0</td></tr>
+            <tr><td>4</td><td>4.6</td><td>3.1</td><td>Pendek (1)</td><td>setosa</td><td>0</td></tr>
+            <tr><td>5</td><td>5.0</td><td>3.6</td><td>Pendek (1)</td><td>setosa</td><td>0</td></tr>
+            <tr><td>6</td><td>5.4</td><td>3.9</td><td>Pendek (1)</td><td>setosa</td><td>0</td></tr>
+            <tr><td>7</td><td>4.6</td><td>3.4</td><td>Pendek (1)</td><td>setosa</td><td>0</td></tr>
+            <tr><td>8</td><td>5.0</td><td>3.4</td><td>Pendek (1)</td><td>setosa</td><td>0</td></tr>
+            <tr><td>9</td><td>4.4</td><td>2.9</td><td>Pendek (1)</td><td>setosa</td><td>0</td></tr>
+            <tr><td>10</td><td>4.9</td><td>3.1</td><td>Pendek (1)</td><td>setosa</td><td>0</td></tr>
+        </tbody>
+    </table>
+
+    <br>
+
+    <h3>Penjelasan Pembentukan Tipe Data</h3>
+
+    <ul>
+        <li><strong>Numerik:</strong> 
+            Sepal Length dan Sepal Width digunakan langsung dari data asli karena berbentuk angka kontinu.
+        </li>
+        <li><strong>Ordinal:</strong> 
+            Petal Length dikategorikan menjadi:
+            <ul>
+                <li>&lt; 3 cm → Pendek (1)</li>
+                <li>3 – 5 cm → Sedang (2)</li>
+                <li>&gt; 5 cm → Panjang (3)</li>
+            </ul>
+            Karena memiliki tingkatan, maka termasuk data ordinal.
+        </li>
+        <li><strong>Kategorikal:</strong> 
+            Species (setosa, versicolor, virginica) merupakan label tanpa tingkatan.
+        </li>
+        <li><strong>Biner:</strong> 
+            Petal Width dikonversi menjadi:
+            <ul>
+                <li>≤ 1.5 cm → 0</li>
+                <li>&gt; 1.5 cm → 1</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Kesimpulan</h3>
+    <p>
+        Dataset Iris secara asli hanya memiliki data numerik dan kategorikal.
+        Namun melalui proses transformasi (feature engineering),
+        berhasil dibentuk data campuran yang terdiri dari numerik, ordinal,
+        kategorikal, dan biner. Data campuran ini dapat digunakan
+        untuk analisis lanjutan seperti pengukuran jarak menggunakan
+        metode Gower Distance atau clustering data campuran.
+    </p>
+</section>
+
+<!-- ================= END DATA CAMPURAN ================= -->
 
 <div class="section">
     <h2>Perhitungan Jarak (Euclidean Distance)</h2>
