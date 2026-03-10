@@ -650,7 +650,105 @@ document.write(`
         <li>Biner → 0 jika sama, 1 jika berbeda</li>
     </ul>
 
-    <h3>4. Contoh Perhitungan</h3>
+    <h3>Perhitungan</h3>
+
+    <div style="margin-top:40px">
+
+    <h2>Perhitungan Jarak Data Campuran</h2>
+    <p>Contoh perhitungan jarak antara Data 1 dan Data 2 menggunakan metode jarak data campuran.</p>
+    
+    <table border="1" cellpadding="10" cellspacing="0" style="border-collapse:collapse; width:100%">
+    <thead style="background:#1976d2;color:white;">
+    <tr>
+    <th>Atribut</th>
+    <th>Tipe Data</th>
+    <th>Data 1</th>
+    <th>Data 2</th>
+    <th>Cara Perhitungan</th>
+    <th>Hasil</th>
+    </tr>
+    </thead>
+    
+    <tbody>
+    
+    <tr>
+    <td>Sepal Length</td>
+    <td>Numerik</td>
+    <td>5.1</td>
+    <td>4.9</td>
+    <td>
+    |5.1 - 4.9| / (7.9 - 4.3) <br>
+    = 0.2 / 3.6
+    </td>
+    <td>0.0556</td>
+    </tr>
+    
+    <tr>
+    <td>Sepal Width</td>
+    <td>Numerik</td>
+    <td>3.5</td>
+    <td>3.0</td>
+    <td>
+    |3.5 - 3.0| / (4.4 - 2.0) <br>
+    = 0.5 / 2.4
+    </td>
+    <td>0.2083</td>
+    </tr>
+    
+    <tr>
+    <td>Panjang Kelopak</td>
+    <td>Ordinal</td>
+    <td>Pendek (1)</td>
+    <td>Pendek (1)</td>
+    <td>
+    |1 - 1| / (m - 1) <br>
+    m = jumlah level ordinal <br>
+    = 0 / 1
+    </td>
+    <td>0</td>
+    </tr>
+    
+    <tr>
+    <td>Species</td>
+    <td>Kategorikal</td>
+    <td>setosa</td>
+    <td>setosa</td>
+    <td>
+    Jika sama = 0 <br>
+    Jika berbeda = 1
+    </td>
+    <td>0</td>
+    </tr>
+    
+    <tr>
+    <td>Status</td>
+    <td>Biner</td>
+    <td>0</td>
+    <td>0</td>
+    <td>
+    Jika sama = 0 <br>
+    Jika berbeda = 1
+    </td>
+    <td>0</td>
+    </tr>
+    
+    <tr style="background:#f2f2f2;font-weight:bold">
+    <td colspan="5">
+    Total Jarak (Rata-rata semua atribut) <br><br>
+    
+    D = (d1 + d2 + d3 + d4 + d5) / jumlah atribut <br>
+    
+    D = (0.0556 + 0.2083 + 0 + 0 + 0) / 5 <br>
+    
+    D = 0.2639 / 5
+    </td>
+    <td>0.0528</td>
+    </tr>
+    
+    </tbody>
+    </table>
+    
+    </div>
 
     <p>
         Misalnya dibandingkan Data ke-1 dan Data ke-2:
